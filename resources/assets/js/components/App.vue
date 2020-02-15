@@ -1,13 +1,13 @@
 <template>
-    <div class="col-md-6 col-md-offset-3">
-        <acme></acme>
+    <div id="app">
+    <Calculator/>
     </div>
 </template>
 <script>
-import Acme from './Acme'
+import Calculator from './Calculator'
 export default {
     components: {
-        'Acme': Acme
+        Calculator
     }
 }
 </script>
