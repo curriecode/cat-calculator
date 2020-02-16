@@ -17,7 +17,8 @@ class CatsController extends Controller
             $request = $client->get('https://api.thecatapi.com/v1/images/search');
             $response = $request->getBody();
             Log::debug($response);
-            dd($response);
+            // dd($response);
+            return response($response, Response::HTTP_CREATED);
 
         // return response($cat->jsonSerialize(), Response::HTTP_CREATED);
     }
