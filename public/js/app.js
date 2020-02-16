@@ -1960,7 +1960,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      current: "1234"
+      current: ""
     };
   },
   methods: {
@@ -1972,7 +1972,19 @@ __webpack_require__.r(__webpack_exports__);
     },
     percent: function percent() {
       this.current = "".concat(parseFloat(this.current) / 100);
-    }
+    },
+    append: function append(number) {
+      this.current = "".concat(this.current).concat(number);
+    },
+    dot: function dot() {
+      if (this.current.indexOf(".") === -1) {
+        this.append(".");
+      }
+    },
+    divide: function divide() {},
+    times: function times() {},
+    minus: function minus() {},
+    add: function add() {}
   }
 });
 
@@ -1990,7 +2002,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* all child elements of calculator will be put into 4 by infinty grid */\n.calculator[data-v-9c31310e] {\n    margin: 0 auto;\n    width: 400px;\n    text-align: center;\n    font-size: 40px;\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    grid-auto-rows: minmax(50px, auto);\n}\n.display[data-v-9c31310e] {\n    grid-column: 1 / 5;\n    background-color: #333;\n    color: white;\n}\n.zero[data-v-9c31310e] {\n    grid-column: 1 / 3;\n}\n.btn[data-v-9c31310e] {\n    cursor: pointer;\n    background-color: #eee;\n    border: 1px solid #999;\n}\n.operator[data-v-9c31310e] {\n    background-color: orange;\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* all child elements of calculator will be put into 4 by infinty grid */\n.calculator[data-v-9c31310e] {\n    margin: 0 auto;\n    width: 400px;\n    text-align: center;\n    font-size: 40px;\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    grid-auto-rows: minmax(50px, auto);\n}\n.display[data-v-9c31310e] {\n    /* padding-left: 20px; */\n    grid-column: 1 / 5;\n    background-color: #333;\n    color: white;\n}\n.zero[data-v-9c31310e] {\n    grid-column: 1 / 3;\n}\n.btn[data-v-9c31310e] {\n    /* text-align: center; */\n    cursor: pointer;\n    background-color: #eee;\n    border: 1px solid #999;\n}\n.operator[data-v-9c31310e] {\n    background-color: orange;\n    color: white;\n}\n", ""]);
 
 // exports
 
@@ -20257,35 +20269,153 @@ var render = function() {
       _vm._v("%")
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "btn operator" }, [_vm._v("÷")]),
+    _c("div", { staticClass: "btn operator", on: { click: _vm.divide } }, [
+      _vm._v("÷")
+    ]),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v("7")]),
+    _c(
+      "div",
+      {
+        staticClass: "btn",
+        on: {
+          click: function($event) {
+            return _vm.append("7")
+          }
+        }
+      },
+      [_vm._v("7")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v("8")]),
+    _c(
+      "div",
+      {
+        staticClass: "btn",
+        on: {
+          click: function($event) {
+            return _vm.append("8")
+          }
+        }
+      },
+      [_vm._v("8")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v("9")]),
+    _c(
+      "div",
+      {
+        staticClass: "btn",
+        on: {
+          click: function($event) {
+            return _vm.append("9")
+          }
+        }
+      },
+      [_vm._v("9")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn operator" }, [_vm._v("x")]),
+    _c("div", { staticClass: "btn operator", on: { click: _vm.times } }, [
+      _vm._v("x")
+    ]),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v("4")]),
+    _c(
+      "div",
+      {
+        staticClass: "btn",
+        on: {
+          click: function($event) {
+            return _vm.append("4")
+          }
+        }
+      },
+      [_vm._v("4")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v("5")]),
+    _c(
+      "div",
+      {
+        staticClass: "btn",
+        on: {
+          click: function($event) {
+            return _vm.append("5")
+          }
+        }
+      },
+      [_vm._v("5")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v("6")]),
+    _c(
+      "div",
+      {
+        staticClass: "btn",
+        on: {
+          click: function($event) {
+            return _vm.append("6")
+          }
+        }
+      },
+      [_vm._v("6")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn operator" }, [_vm._v("-")]),
+    _c("div", { staticClass: "btn operator", on: { click: _vm.minus } }, [
+      _vm._v("-")
+    ]),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v("1")]),
+    _c(
+      "div",
+      {
+        staticClass: "btn",
+        on: {
+          click: function($event) {
+            return _vm.append("1")
+          }
+        }
+      },
+      [_vm._v("1")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v("2")]),
+    _c(
+      "div",
+      {
+        staticClass: "btn",
+        on: {
+          click: function($event) {
+            return _vm.append("2")
+          }
+        }
+      },
+      [_vm._v("2")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v("3")]),
+    _c(
+      "div",
+      {
+        staticClass: "btn",
+        on: {
+          click: function($event) {
+            return _vm.append("3")
+          }
+        }
+      },
+      [_vm._v("3")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn operator" }, [_vm._v("+")]),
+    _c("div", { staticClass: "btn operator", on: { click: _vm.add } }, [
+      _vm._v("+")
+    ]),
     _vm._v(" "),
-    _c("div", { staticClass: "zero btn" }, [_vm._v("0")]),
+    _c(
+      "div",
+      {
+        staticClass: "zero btn",
+        on: {
+          click: function($event) {
+            return _vm.append("0")
+          }
+        }
+      },
+      [_vm._v("0")]
+    ),
     _vm._v(" "),
-    _c("div", { staticClass: "btn" }, [_vm._v(".")]),
+    _c("div", { staticClass: "btn", on: { click: _vm.dot } }, [_vm._v(".")]),
     _vm._v(" "),
     _c("div", { staticClass: "btn operator" }, [_vm._v("=")])
   ])
