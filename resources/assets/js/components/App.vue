@@ -1,15 +1,15 @@
 <template>
-    <div class="col-md-6 col-md-offset-3">
-        <acme></acme>
-    </div>
+  <!-- <div id="app"> -->
+  <Calculator />
+  <!-- </div> -->
 </template>
 <script>
-import Acme from './Acme'
+import Calculator from "./Calculator";
 export default {
-    components: {
-        'Acme': Acme
-    }
-}
+  components: {
+    Calculator: Calculator
+  }
+};
 </script>
 <style>
 </style>

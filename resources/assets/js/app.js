@@ -1,8 +1,8 @@
 require('./bootstrap');
 import Vue from 'vue'
-import Acme from './components/Acme'
+import Calculator from './components/Calculator'
 import App from './components/App'
-Vue.component('acme', Acme)
+Vue.component('Calculator', Calculator)
 const app = new Vue({
     el: '#app',
     render: h => h(App)
