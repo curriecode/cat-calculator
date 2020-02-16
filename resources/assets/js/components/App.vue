@@ -38,10 +38,4 @@ export default {
     }
 };
 </script>
-<style>
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-</style>
+<style></style>

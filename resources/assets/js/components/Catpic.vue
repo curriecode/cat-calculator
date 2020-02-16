@@ -13,8 +13,8 @@ export default {
 };
 </script>
 <style scoped>
-.cat {
+/* .cat {
     width: 650px;
     height: 600px;
-}
+} */
 </style>
