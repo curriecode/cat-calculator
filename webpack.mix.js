@@ -13,4 +13,6 @@ const mix = require("laravel-mix");
 
 mix.js("resources/assets/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
-    .sass("resources/sass/catpic.scss", "public/css");
+    .sass("resources/sass/catpic.scss", "public/css")
+    .sass("resources/sass/calculator.scss", "public/css")
+    .sass("resources/sass/header.scss", "public/css");
