@@ -26,18 +26,18 @@
 <script>
 export default {
     data() {
+        //keeps track of state
         return {
             previous: null,
             current: "",
             operator: null,
             operatorClicked: false
-            // catpic: null
         };
     },
-    props: ["sumclick"],
     methods: {
         clear() {
             this.current = "";
+            this.$emit("clearCat");
         },
         sign() {
             this.current =
@@ -49,6 +49,7 @@ export default {
             this.current = `${parseFloat(this.current) / 100}`;
         },
         append(number) {
+            //appe
             if (this.operatorClicked) {
                 this.current = "";
                 this.operatorClicked = false;
@@ -56,6 +57,7 @@ export default {
             this.current = `${this.current}${number}`;
         },
         dot() {
+            //if there is no . then append one to current
             if (this.current.indexOf(".") === -1) {
                 this.append(".");
             }
@@ -80,27 +82,16 @@ export default {
             this.operator = (a, b) => a + b;
             this.setPrevious();
         },
-        // req() {
-        //     axios
-        //         .get("/api/cats/create")
-        //         .then(res => {
-        //             console.log("YASSSSSSSSS", res.data[0].url);
-        //             this.catpic = res.data[0].url;
-        //         })
-        //         .catch(err => {
-        //             console.log("ERROR: ", err);
-        //         });
-        // },
         equal() {
-            //takes the current value and runs the operator against the previous value
-            //need  parseFloat because both values are strings
+            //takes the previous value and runs the operator against the current value
+            //need  parseFloat since both values are strings
             this.current = `${this.operator(
                 parseFloat(this.previous),
                 parseFloat(this.current)
             )}`;
             this.previous = null;
+            //request to api called from App - parent component
             this.$emit("equalClicked");
-            // this.req();
         }
     }
 };
@@ -108,8 +99,9 @@ export default {
 <style scoped>
 /* all child elements of calculator will be put into 4 by infinty grid */
 .calculator {
-    margin: 0 auto;
+    /* margin: 0 auto; */
     width: 400px;
+    height: 500px;
     text-align: center;
     font-size: 40px;
     display: grid;
@@ -117,7 +109,7 @@ export default {
     grid-auto-rows: minmax(50px, auto);
 }
 .display {
-    /* padding-left: 20px; */
+    padding-top: 20px;
     grid-column: 1 / 5;
     background-color: #333;
     color: white;
@@ -126,6 +118,7 @@ export default {
     grid-column: 1 / 3;
 }
 .btn {
+    padding-top: 20px;
     /* text-align: center; */
     cursor: pointer;
     background-color: #eee;
