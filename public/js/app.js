@@ -2105,22 +2105,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       pic: null
     };
   },
-  created: {
-    headerPic: function headerPic() {
-      var _this = this;
+  created: function created() {
+    var _this = this;
 
-      axios.get("/api/cats/create").then(function (res) {
-        _this.pic = res.data[0].url;
-      })["catch"](function (err) {
-        console.log("ERROR: ", err);
-      });
-    }
+    axios.get("/api/cats/create").then(function (res) {
+      _this.pic = res.data[0].url;
+    })["catch"](function (err) {
+      console.log("ERROR: ", err);
+    });
   }
 });
 
@@ -2195,7 +2195,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.header[data-v-1d126904] {\n    display: flex;\n    width: 100%;\n    height: 20%;\n}\n", ""]);
+exports.push([module.i, "\n.header[data-v-1d126904] {\n    text-align: center;\n\n    display: flex;\n    width: 100%;\n    height: 20%;\n}\n.cat-header[data-v-1d126904] {\n    width: 100%;\n    height: 350px;\n    margin-bottom: 3%;\n}\n.text[data-v-1d126904] {\n    width: 100%;\n    position: absolute;\n    color: rgb(133, 215, 240);\n    font-size: 5em;\n    font-weight: bold;\n    top: 20%;\n    left: 50%;\n    transform: translate(-50%, -50%);\n    text-shadow: 3px 3px #333;\n\n    /* z-index: 3; */\n}\n", ""]);
 
 // exports
 
@@ -20521,13 +20521,13 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
+      _c("Header"),
+      _vm._v(" "),
       _c("Calculator", {
         on: { equalClicked: _vm.req, clearCat: _vm.clearCat }
       }),
       _vm._v(" "),
-      _c("Catpic", { attrs: { catpic: _vm.catpic } }),
-      _vm._v(" "),
-      _c("Header")
+      _c("Catpic", { attrs: { catpic: _vm.catpic } })
     ],
     1
   )
@@ -20762,8 +20762,18 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "header", attrs: { id: "header" } }, [
+    _c("img", { staticClass: "cat-header", attrs: { src: _vm.pic } }),
+    _vm._v(" "),
+    _c("div", { staticClass: "text" }, [_vm._v("CAT CALCULATOR")])
+  ])
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
