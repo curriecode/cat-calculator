@@ -1,8 +1,8 @@
 <template>
     <div class="container">
+        <Header />
         <Calculator @equalClicked="req" @clearCat="clearCat" />
         <Catpic :catpic="catpic" />
-        <Header />
     </div>
 </template>
 <script>
