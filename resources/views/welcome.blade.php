@@ -8,12 +8,12 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="container-fluid">
-            <div class="col-md-12 text-center">
+        <!-- <div class="container-fluid"> -->
+            <!-- <div class="col-md-12 text-center">
                 <h1>Cat Calculator</h1>
-            </div>
+            </div> -->
             <div id="app"></div>
-        </div>
+        <!-- </div> -->
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
