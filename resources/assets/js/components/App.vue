@@ -2,11 +2,13 @@
     <div class="container">
         <Calculator @equalClicked="req" @clearCat="clearCat" />
         <Catpic :catpic="catpic" />
+        <Header />
     </div>
 </template>
 <script>
 import Calculator from "./Calculator";
 import CatPic from "./Catpic";
+import Header from "./Header";
 export default {
     data() {
         return {
@@ -14,6 +16,7 @@ export default {
         };
     },
     components: {
+        Header: Header,
         Calculator: Calculator,
         CatPic: CatPic
     },
