@@ -30,10 +30,11 @@ export default {
             previous: null,
             current: "",
             operator: null,
-            operatorClicked: false,
-            catpic: null
+            operatorClicked: false
+            // catpic: null
         };
     },
+    props: ["sumclick"],
     methods: {
         clear() {
             this.current = "";
@@ -79,17 +80,17 @@ export default {
             this.operator = (a, b) => a + b;
             this.setPrevious();
         },
-        req() {
-            axios
-                .get("/api/cats/create")
-                .then(res => {
-                    console.log("YASSSSSSSSS", res.data[0].url);
-                    this.catpic = res.data[0].url;
-                })
-                .catch(err => {
-                    console.log("ERROR: ", err);
-                });
-        },
+        // req() {
+        //     axios
+        //         .get("/api/cats/create")
+        //         .then(res => {
+        //             console.log("YASSSSSSSSS", res.data[0].url);
+        //             this.catpic = res.data[0].url;
+        //         })
+        //         .catch(err => {
+        //             console.log("ERROR: ", err);
+        //         });
+        // },
         equal() {
             //takes the current value and runs the operator against the previous value
             //need  parseFloat because both values are strings
@@ -98,7 +99,8 @@ export default {
                 parseFloat(this.current)
             )}`;
             this.previous = null;
-            this.req();
+            this.$emit("equalClicked");
+            // this.req();
         }
     }
 };
