@@ -19,7 +19,7 @@
         <div @click="add" class="btn operator">+</div>
         <div @click="append('0')" class="zero btn">0</div>
         <div @click="dot" class="btn">.</div>
-        <div class="btn operator">=</div>
+        <div @click="equal" class="btn operator">=</div>
     </div>
 </template>
 
@@ -27,7 +27,10 @@
 export default {
     data() {
         return {
-            current: ""
+            previous: null,
+            current: "",
+            operator: null,
+            operatorClicked: false
         };
     },
     methods: {
@@ -44,6 +47,10 @@ export default {
             this.current = `${parseFloat(this.current) / 100}`;
         },
         append(number) {
+            if (this.operatorClicked) {
+                this.current = "";
+                this.operatorClicked = false;
+            }
             this.current = `${this.current}${number}`;
         },
         dot() {
@@ -51,10 +58,35 @@ export default {
                 this.append(".");
             }
         },
-        divide() {},
-        times() {},
-        minus() {},
-        add() {}
+        setPrevious() {
+            this.previous = this.current;
+            this.operatorClicked = true;
+        },
+        divide() {
+            this.operator = (a, b) => a / b;
+            this.setPrevious();
+        },
+        times() {
+            this.operator = (a, b) => a * b;
+            this.setPrevious();
+        },
+        minus() {
+            this.operator = (a, b) => a - b;
+            this.setPrevious();
+        },
+        add() {
+            this.operator = (a, b) => a + b;
+            this.setPrevious();
+        },
+        equal() {
+            //takes the current value and runs the operator against the previous value
+            //need  parseFloat because both values are strings
+            this.current = `${this.operator(
+                parseFloat(this.previous),
+                parseFloat(this.current)
+            )}`;
+            this.previous = null;
+        }
     }
 };
 </script>

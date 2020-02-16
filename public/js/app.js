@@ -1960,7 +1960,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      current: ""
+      previous: null,
+      current: "",
+      operator: null,
+      operatorClicked: false
     };
   },
   methods: {
@@ -1974,6 +1977,11 @@ __webpack_require__.r(__webpack_exports__);
       this.current = "".concat(parseFloat(this.current) / 100);
     },
     append: function append(number) {
+      if (this.operatorClicked) {
+        this.current = "";
+        this.operatorClicked = false;
+      }
+
       this.current = "".concat(this.current).concat(number);
     },
     dot: function dot() {
@@ -1981,10 +1989,44 @@ __webpack_require__.r(__webpack_exports__);
         this.append(".");
       }
     },
-    divide: function divide() {},
-    times: function times() {},
-    minus: function minus() {},
-    add: function add() {}
+    setPrevious: function setPrevious() {
+      this.previous = this.current;
+      this.operatorClicked = true;
+    },
+    divide: function divide() {
+      this.operator = function (a, b) {
+        return a / b;
+      };
+
+      this.setPrevious();
+    },
+    times: function times() {
+      this.operator = function (a, b) {
+        return a * b;
+      };
+
+      this.setPrevious();
+    },
+    minus: function minus() {
+      this.operator = function (a, b) {
+        return a - b;
+      };
+
+      this.setPrevious();
+    },
+    add: function add() {
+      this.operator = function (a, b) {
+        return a + b;
+      };
+
+      this.setPrevious();
+    },
+    equal: function equal() {
+      //takes the current value and runs the operator against the previous value
+      //need  parseFloat because both values are strings
+      this.current = "".concat(this.operator(parseFloat(this.previous), parseFloat(this.current)));
+      this.previous = null;
+    }
   }
 });
 
@@ -2002,7 +2044,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* all child elements of calculator will be put into 4 by infinty grid */\n.calculator[data-v-9c31310e] {\n    margin: 0 auto;\n    width: 400px;\n    text-align: center;\n    font-size: 40px;\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    grid-auto-rows: minmax(50px, auto);\n}\n.display[data-v-9c31310e] {\n    /* padding-left: 20px; */\n    grid-column: 1 / 5;\n    background-color: #333;\n    color: white;\n}\n.zero[data-v-9c31310e] {\n    grid-column: 1 / 3;\n}\n.btn[data-v-9c31310e] {\n    /* text-align: center; */\n    cursor: pointer;\n    background-color: #eee;\n    border: 1px solid #999;\n}\n.operator[data-v-9c31310e] {\n    background-color: orange;\n    color: white;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/* all child elements of calculator will be put into 4 by infinty grid */\n.calculator[data-v-9c31310e] {\n    margin: 0 auto;\n    width: 400px;\n    text-align: center;\n    font-size: 40px;\n    display: grid;\n    grid-template-columns: repeat(4, 1fr);\n    grid-auto-rows: minmax(50px, auto);\n}\n.display[data-v-9c31310e] {\n    /* padding-left: 20px; */\n    grid-column: 1 / 5;\n    background-color: #333;\n    color: white;\n}\n.zero[data-v-9c31310e] {\n    grid-column: 1 / 3;\n}\n.btn[data-v-9c31310e] {\n    /* text-align: center; */\n    cursor: pointer;\n    background-color: #eee;\n    border: 1px solid #999;\n}\n.operator[data-v-9c31310e] {\n    background-color: orange;\n    color: white;\n}\n", ""]);
 
 // exports
 
@@ -20417,7 +20459,9 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "btn", on: { click: _vm.dot } }, [_vm._v(".")]),
     _vm._v(" "),
-    _c("div", { staticClass: "btn operator" }, [_vm._v("=")])
+    _c("div", { staticClass: "btn operator", on: { click: _vm.equal } }, [
+      _vm._v("=")
+    ])
   ])
 }
 var staticRenderFns = []
