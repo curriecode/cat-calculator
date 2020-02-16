@@ -13,15 +13,12 @@ class CatsController extends Controller
 {
     public function create()
     {
+            $client = new \GuzzleHttp\Client();
+            $request = $client->get('https://api.thecatapi.com/v1/images/search');
+            $response = $request->getBody();
+            Log::debug($response);
+            dd($response);
 
-        $cat = new Cat();
-    //   $crud->name = $faker->lexify('????????');
-    //   $crud->color = $faker->boolean ? 'red' : 'green';
-    //   $crud->save();
-        Log::debug("wjaat");
-    // Log::channel('stderr')->info('Something happened!');
-
-    //   return response($crud->jsonSerialize(), Response::HTTP_CREATED);
-        return response($cat->jsonSerialize(), Response::HTTP_CREATED);
+        // return response($cat->jsonSerialize(), Response::HTTP_CREATED);
     }
 }
