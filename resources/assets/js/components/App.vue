@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <Header />
         <Calculator @equalClicked="req" @clearCat="clearCat" />
         <Catpic :catpic="catpic" />
     </div>
@@ -7,6 +8,7 @@
 <script>
 import Calculator from "./Calculator";
 import CatPic from "./Catpic";
+import Header from "./Header";
 export default {
     data() {
         return {
@@ -14,6 +16,7 @@ export default {
         };
     },
     components: {
+        Header: Header,
         Calculator: Calculator,
         CatPic: CatPic
     },
