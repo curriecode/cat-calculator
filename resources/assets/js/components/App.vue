@@ -1,17 +1,44 @@
 <template>
-    <div>
-        <Calculator />
-        <Catpic />
+    <div class="container">
+        <Calculator @equalClicked="req" @clearCat="clearCat" />
+        <Catpic :catpic="catpic" />
     </div>
 </template>
 <script>
 import Calculator from "./Calculator";
 import CatPic from "./Catpic";
 export default {
+    data() {
+        return {
+            catpic: null
+        };
+    },
     components: {
         Calculator: Calculator,
         CatPic: CatPic
+    },
+    methods: {
+        req() {
+            axios
+                .get("/api/cats/create")
+                .then(res => {
+                    console.log("YASSSSSSSSS", res.data[0].url);
+                    this.catpic = res.data[0].url;
+                })
+                .catch(err => {
+                    console.log("ERROR: ", err);
+                });
+        },
+        clearCat() {
+            this.catpic = null;
+        }
     }
 };
 </script>
-<style></style>
+<style>
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+</style>

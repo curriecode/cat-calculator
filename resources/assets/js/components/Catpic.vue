@@ -1,7 +1,6 @@
 <template>
     <div id="cat-pic" class="image">
-        <h1>This Where Image Goes</h1>
-        <!-- {{ catpic }} -->
+        <img class="cat" v-bind:src="catpic" />
     </div>
 </template>
 
@@ -9,15 +8,13 @@
 export default {
     data() {
         return {};
-    }
-    // props: ["catpic"]
+    },
+    props: ["catpic"]
 };
 </script>
 <style scoped>
-.image {
-    width: 400px;
-    height: 400px;
-    background-color: aqua;
-    position: absolute;
+.cat {
+    width: 650px;
+    height: 600px;
 }
 </style>

@@ -19,7 +19,5 @@ class CatsController extends Controller
             Log::debug($response);
             // dd($response);
             return response($response, Response::HTTP_CREATED);
-
-        // return response($cat->jsonSerialize(), Response::HTTP_CREATED);
     }
 }
