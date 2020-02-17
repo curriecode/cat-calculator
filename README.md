@@ -47,7 +47,7 @@ After you have the environment setup you can get started with these steps:
 
 2. Open a terminal and `cd` into the project directory.
 
-3. Install node packages using the `npm install` command in the terminal.
+3. Install node packages using the `yarn install` command in the terminal.
 
 4. Install Laravel dependencies using the `composer install` command in the terminal.
 
