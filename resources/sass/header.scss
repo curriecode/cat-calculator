@@ -13,10 +13,20 @@
     width: 100%;
     position: absolute;
     color: rgb(133, 215, 240);
-    font-size: 5em;
+    font-size: 5.8em;
     font-weight: bold;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-shadow: 3px 3px #333;
+}
+
+@media screen and (max-width: 680px) {
+    .text {
+        font-size: 4em;
+        top: 15%;
+    }
+    .cat-header {
+        height: 200px;
+    }
 }

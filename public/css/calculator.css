@@ -35,3 +35,9 @@
   color: white;
 }
 
+@media screen and (max-width: 680px) {
+  .calculator {
+    width: 100vw;
+  }
+}
+
