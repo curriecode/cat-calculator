@@ -1,43 +1,43 @@
 .image {
-    text-align: center;
-    display: flex;
+  text-align: center;
+  display: flex;
 }
 
 .cat {
-    display: flex;
-    width: 650px;
-    height: 450px;
-    border: 1px solid #333;
+  display: flex;
+  width: 650px;
+  height: 450px;
+  border: 1px solid #333;
 }
 
 .cat-text {
-    width: 40%;
-    position: absolute;
-    color: #333333;
-    font-size: 3em;
-    font-weight: bold;
-    right: 0;
-    padding-top: 2em;
-    padding-right: 3em;
+  width: 40%;
+  position: absolute;
+  color: #333333;
+  font-size: 3em;
+  font-weight: bold;
+  right: 0;
+  padding-top: 2em;
+  padding-right: 3em;
 }
 
 @media screen and (max-width: 680px) {
-    .cat-text {
-        width: auto;
-        font-size: 3em;
-        padding-right: 0px;
-        padding-top: 1em;
-    }
+  .cat-text {
+    width: auto;
+    font-size: 3em;
+    padding-right: 0px;
+    padding-top: 1em;
+  }
 
-    .cat {
-        width: 100vw;
-    }
+  .cat {
+    width: 100vw;
+  }
 }
 
 @media screen and (min-width: 680px) and (max-width: 1066px) {
-    .cat-text {
-        width: 60vw;
-        padding-right: 4em;
-        padding-top: 1em;
-    }
+  .cat-text {
+    width: 60vw;
+    padding-right: 4em;
+  }
 }
+
