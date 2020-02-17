@@ -21,11 +21,13 @@ export default {
         CatPic: CatPic
     },
     methods: {
+        // this function is passed to the calcultor component to be called
+        // on click handler - it will call the api and then set catpic in App state as response
+        // which is then passed to catpic component as props to load photo
         req() {
             axios
                 .get("/api/cats/create")
                 .then(res => {
-                    console.log("YASSSSSSSSS", res.data[0].url);
                     this.catpic = res.data[0].url;
                 })
                 .catch(err => {
@@ -33,6 +35,7 @@ export default {
                 });
         },
         clearCat() {
+            //passed to calculator as custom event to clear photo
             this.catpic = null;
         }
     }

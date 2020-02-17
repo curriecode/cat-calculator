@@ -36,6 +36,7 @@ export default {
     },
     methods: {
         clear() {
+            //clears numbers from calculator and current cat photo
             this.current = "";
             this.$emit("clearCat");
         },
@@ -49,7 +50,9 @@ export default {
             this.current = `${parseFloat(this.current) / 100}`;
         },
         append(number) {
-            //appe
+            //appends numbers to the calculator 'screen'
+            //if opporator has been clicked it will set it back to false to append
+            //numbers for the right side of the equation
             if (this.operatorClicked) {
                 this.current = "";
                 this.operatorClicked = false;
