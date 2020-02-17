@@ -10,54 +10,67 @@
 
 ## Description
 
+Cat Calculator is an adorably practical responsive full stack application, making solving math problems cuter than ever. Simply enter your operations into the fully functional calculator to render a uniquely calculated cat photo.
+
 ## Stack
 
 ### Back-End
 
+-   PHP
+-   Laravel
+-   [The Cat API](https://thecatapi.com/)
+
 ### Front-End
+
+-   JavaScript
+-   Vue.js
+-   Axios
 
 ## Final Product
 
-![""](#)
-![""](#)
-![""](#)
+![ ](#)
+![ ](#)
+![ ](#)
 
 ## Getting Started
 
-[thing to click](link)
+This project requires a Laravel / PHP environment, if you do not yet have this set up please see these resources to get started
 
-This project requires the following dependencies on your development machine:
+https://codebriefly.com/basic-laravel-vue-js-setup/
 
-```
-~> node --version
-v8.9.4
-~> npm --version
-6.13.4
-~> psql --version
-psql (PostgreSQL) 9.5.19
-```
+https://programarivm.com/setting-up-a-vue-js-and-laravel-homestead-app-in-seconds/
 
-After you have installed the dependencies you can get started by:
+https://laravel.com/docs/6.x/homestead
+
+After you have the environment setup you can get started with these steps:
 
 1. Clone this repository.
-2. Install node packages using the `npm install` command.
-3. Connect to posgres using `psql` in the terminal. Create tables by running `\i db/schema/midterm.sql` and create test users by running `\i db/seeds/01_users.sql`
 
-    - Not sure how to set up a database ? See, [postgres docs](https://www.postgresql.org/docs/)
+2. Install node packages using the `npm install` command in the terminal.
 
-4. Start the web server using the `yarn run watch` command.
+3. Install Laravel dependencies using the `composer install` command in the terminal.
 
-5. The app will be served at <http://localhost:8080/> in your browser.
+4. Start the web server using the `yarn run watch` command in the terminal.
+
+5. The app will be served at <http://localhost:8000/> in your browser.
 
 ## Dependencies
 
-    body-parser: ^1.19.0
-    chalk: ^2.4.2
-    cookie-session: ^1.3.3
-    dotenv: ^2.0.0
-    ejs: ^2.6.2
-    express: ^4.17.1
-    morgan: ^1.9.1
-    node-sass-middleware: ^0.11.0
-    pg: ^6.4.2
-    pg-native: ^3.0.0
+```
+axios: ^0.19,
+babel-eslint: ^10.0.3,
+cross-env: ^5.2.1,
+eslint: ^6.8.0,
+eslint-config-prettier: ^6.10.0,
+eslint-plugin-prettier: ^3.1.2,
+eslint-plugin-vue: ^6.1.2,
+laravel-mix: ^5.0.1,
+lodash: ^4.17.13,
+prettier: ^1.19.1,
+resolve-url-loader: ^2.3.1,
+sass: ^1.15.2,
+sass-loader: ^8.0.2,
+vue: ^2.6.11,
+vue-eslint-parser: ^7.0.0,
+vue-template-compiler: ^2.6.11
+```
