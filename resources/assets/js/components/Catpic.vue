@@ -12,9 +12,4 @@ export default {
     props: ["catpic"]
 };
 </script>
-<style scoped>
-/* .cat {
-    width: 650px;
-    height: 600px;
-} */
-</style>
+<style scoped></style>
