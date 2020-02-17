@@ -58,6 +58,7 @@ After you have the environment setup you can get started with these steps:
 ## Dependencies
 
 ```
+Client ..........................
 axios: ^0.19,
 babel-eslint: ^10.0.3,
 cross-env: ^5.2.1,
@@ -74,4 +75,11 @@ sass-loader: ^8.0.2,
 vue: ^2.6.11,
 vue-eslint-parser: ^7.0.0,
 vue-template-compiler: ^2.6.11
+
+Server.............................
+php: ^7.2,
+fideloper/proxy: ^4.0,
+guzzlehttp/guzzle: ~6.0,
+laravel/framework: ^6.2,
+laravel/tinker: ^2.0
 ```
