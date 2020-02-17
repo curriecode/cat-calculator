@@ -33,7 +33,7 @@ Cat Calculator is an adorably practical responsive full stack application, makin
 
 ## Getting Started
 
-This project requires a Laravel / PHP environment, if you do not yet have this set up please see these resources to get started
+This project requires a Laravel / PHP environment, if you do not yet have this set up please see these resources to get started:
 
 https://codebriefly.com/basic-laravel-vue-js-setup/
 
@@ -45,13 +45,15 @@ After you have the environment setup you can get started with these steps:
 
 1. Clone this repository.
 
-2. Install node packages using the `npm install` command in the terminal.
+2. Open a terminal and `cd` into the project directory.
 
-3. Install Laravel dependencies using the `composer install` command in the terminal.
+3. Install node packages using the `npm install` command in the terminal.
 
-4. Start the web server using the `yarn run watch` command in the terminal.
+4. Install Laravel dependencies using the `composer install` command in the terminal.
 
-5. The app will be served at <http://localhost:8000/> in your browser.
+5. Start the web server using the `yarn run watch` command in the terminal.
+
+6. The app will be served at <http://localhost:8000/> in your browser.
 
 ## Dependencies
 
