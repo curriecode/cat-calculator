@@ -1,6 +1,29 @@
+.image {
+  text-align: center;
+  display: flex;
+}
+
 .cat {
+  display: flex;
   width: 650px;
   height: 450px;
   border: 1px solid #333;
+}
+
+.cat-text {
+  width: 40%;
+  position: absolute;
+  color: #333333;
+  font-size: 3em;
+  font-weight: bold;
+  right: 0;
+  padding-top: 1em;
+  padding-right: 3em;
+}
+
+@media screen and (max-width: 1066px) {
+  .cat-text {
+    padding-right: 6.5em;
+  }
 }
 

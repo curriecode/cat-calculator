@@ -2081,11 +2081,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: ["catpic"],
   data: function data() {
     return {};
-  },
-  props: ["catpic"]
+  }
 });
 
 /***/ }),
@@ -19949,7 +19954,17 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "image", attrs: { id: "cat-pic" } }, [
-    _c("img", { staticClass: "cat", attrs: { src: _vm.catpic } })
+    _c("div", [
+      _vm.catpic === null
+        ? _c("div", { staticClass: "cat-text" }, [
+            _vm._v(
+              "\n            MAKE SOME CALCULATIONS TO FIND THE PURRFECT CAT!\n        "
+            )
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("img", { staticClass: "cat", attrs: { src: _vm.catpic } })
+    ])
   ])
 }
 var staticRenderFns = []
