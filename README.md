@@ -10,7 +10,7 @@
 
 ## Description
 
-Cat Calculator is an adorably practical responsive full stack application, making solving math problems cuter than ever. Simply enter your operations into the fully functional calculator to render a uniquely calculated cat photo.
+Cat Calculator is an adorably practical responsive full stack application, making solving math problems cuter than ever. Simply enter your equations into the fully functional calculator to render a uniquely calculated cat photo.
 
 ## Stack
 
