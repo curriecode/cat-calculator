@@ -28,9 +28,8 @@ Cat Calculator is an adorably practical responsive full stack application, makin
 
 ## Final Product
 
-![ ](#)
-![ ](#)
-![ ](#)
+!["main page of cat calculator"]('./../docs/cat-calc.png')
+!["mobile view of cat calculator"]('./../docs/mobile-catcalc.png')
 
 ## Getting Started
 
