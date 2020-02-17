@@ -9,16 +9,9 @@
         <link href="{{ asset('css/catpic.css') }}" rel="stylesheet">
         <link href="{{ asset('css/calculator.css') }}" rel="stylesheet">
         <link href="{{ asset('css/header.css') }}" rel="stylesheet">
-
-
     </head>
     <body>
-        <!-- <div class="container-fluid"> -->
-            <!-- <div class="col-md-12 text-center">
-                <h1>Cat Calculator</h1>
-            </div> -->
             <div id="app"></div>
-        <!-- </div> -->
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

@@ -1,6 +1,5 @@
 <template>
     <div id="header" class="header">
-        <!-- <h1>This is the HEADER</h1> -->
         <img class="cat-header" v-bind:src="pic" />
         <div class="text">CAT CALCULATOR</div>
     </div>
@@ -15,6 +14,7 @@ export default {
     },
 
     created() {
+        // calls the api to render a unique cat photo in the header on page load
         axios
             .get("/api/cats/create")
             .then(res => {

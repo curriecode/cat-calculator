@@ -1933,17 +1933,20 @@ __webpack_require__.r(__webpack_exports__);
     CatPic: _Catpic__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   methods: {
+    // this function is passed to the calcultor component to be called
+    // on click handler - it will call the api and then set catpic in App state as response
+    // which is then passed to catpic component as props to load photo
     req: function req() {
       var _this = this;
 
       axios.get("/api/cats/create").then(function (res) {
-        console.log("YASSSSSSSSS", res.data[0].url);
         _this.catpic = res.data[0].url;
       })["catch"](function (err) {
         console.log("ERROR: ", err);
       });
     },
     clearCat: function clearCat() {
+      //passed to calculator as custom event to clear photo
       this.catpic = null;
     }
   }
@@ -1997,6 +2000,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     clear: function clear() {
+      //clears numbers from calculator and current cat photo
       this.current = "";
       this.$emit("clearCat");
     },
@@ -2007,7 +2011,9 @@ __webpack_require__.r(__webpack_exports__);
       this.current = "".concat(parseFloat(this.current) / 100);
     },
     append: function append(number) {
-      //appe
+      //appends numbers to the calculator 'screen'
+      //if opporator has been clicked it will set it back to false to append
+      //numbers for the right side of the equation
       if (this.operatorClicked) {
         this.current = "";
         this.operatorClicked = false;
@@ -2086,6 +2092,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["catpic"],
   data: function data() {
@@ -2111,7 +2118,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2121,6 +2127,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
+    // calls the api to render a unique cat photo in the header on page load
     axios.get("/api/cats/create").then(function (res) {
       _this.pic = res.data[0].url;
     })["catch"](function (err) {
