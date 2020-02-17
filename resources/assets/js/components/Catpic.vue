@@ -1,20 +1,20 @@
 <template>
     <div id="cat-pic" class="image">
-        <img class="cat" v-bind:src="catpic" />
+        <div>
+            <div v-if="catpic === null" class="cat-text">
+                MAKE SOME CALCULATIONS TO FIND THE PURRFECT CAT!
+            </div>
+            <img class="cat" v-bind:src="catpic" />
+        </div>
     </div>
 </template>
 
 <script>
 export default {
+    props: ["catpic"],
     data() {
         return {};
-    },
-    props: ["catpic"]
+    }
 };
 </script>
-<style scoped>
-.cat {
-    width: 650px;
-    height: 600px;
-}
-</style>
+<style scoped></style>
